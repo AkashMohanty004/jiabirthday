@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #0c0217;
+    color: #fdf2f8;
+    overflow-x: hidden;
+  }
+}
+
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-serif-elegant {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-script {
+  font-family: 'Great Vibes', cursive;
+}
+
+.font-handwriting {
+  font-family: 'Dancing Script', cursive;
+}
+
+/* Glassmorphism & Luxury Cards */
+.glass-card {
+  background: rgba(25, 8, 38, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.glass-card-subtle {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-glow {
+  background: rgba(32, 10, 50, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(244, 114, 182, 0.25);
+  box-shadow: 0 10px 40px -10px rgba(236, 72, 153, 0.3), 0 0 20px 2px rgba(244, 114, 182, 0.15);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(244, 114, 182, 0.7), 0 0 40px rgba(236, 72, 153, 0.4);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 15px rgba(253, 224, 71, 0.6), 0 0 30px rgba(234, 179, 8, 0.3);
+}
+
+.box-glow-pink {
+  box-shadow: 0 0 35px -5px rgba(236, 72, 153, 0.4);
+}
+
+.box-glow-gold {
+  box-shadow: 0 0 35px -5px rgba(250, 204, 21, 0.35);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f031e;
+}
+::-webkit-scrollbar-thumb {
+  background: #ec4899;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f472b6;
+}
+
+/* Flickering candle flame keyframes */
+@keyframes flicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.95)) drop-shadow(0 0 25px rgba(249, 115, 22, 0.8));
+  }
+  25% {
+    transform: scale(1.08, 0.96) rotate(2deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 16px rgba(251, 191, 36, 1)) drop-shadow(0 0 30px rgba(249, 115, 22, 0.9));
+  }
+  50% {
+    transform: scale(0.95, 1.05) rotate(-2deg);
+    opacity: 0.88;
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.85)) drop-shadow(0 0 20px rgba(249, 115, 22, 0.7));
+  }
+  75% {
+    transform: scale(1.04, 0.98) rotate(1deg);
+    opacity: 0.98;
+    filter: drop-shadow(0 0 14px rgba(251, 191, 36, 0.95)) drop-shadow(0 0 28px rgba(249, 115, 22, 0.85));
+  }
+}
+
+.animate-flicker {
+  animation: flicker 1.8s infinite ease-in-out;
+  transform-origin: bottom center;
+}
+
+/* Float animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
